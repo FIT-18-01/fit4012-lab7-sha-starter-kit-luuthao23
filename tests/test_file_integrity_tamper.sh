@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-make sha256 file_integrity >/dev/null
+g++ -std=c++17 -Wall -Wextra -pedantic sha_procedure.cpp -o sha256 >/dev/null
+g++ -std=c++17 -Wall -Wextra -pedantic file_integrity.cpp -o file_integrity >/dev/null
+
 
 TMP_FILE=$(mktemp)
 trap 'rm -f "$TMP_FILE"' EXIT

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-make password_hash >/dev/null
+g++ -std=c++17 -Wall -Wextra -pedantic password_hash.cpp -o password_hash >/dev/null
+
 
 HASH_FILE="test_password.hash"
 rm -f "$HASH_FILE"

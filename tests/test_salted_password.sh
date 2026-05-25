@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-make salted_password_hash >/dev/null
+g++ -std=c++17 -Wall -Wextra -pedantic salted_password_hash.cpp -o salted_password_hash >/dev/null
+
 
 HASH_FILE_1="test_password_salted_1.hash"
 HASH_FILE_2="test_password_salted_2.hash"

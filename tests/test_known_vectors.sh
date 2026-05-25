@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-make sha256 >/dev/null
+g++ -std=c++17 -Wall -Wextra -pedantic sha_procedure.cpp -o sha256 >/dev/null
+
 
 EMPTY_EXPECTED="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 ABC_EXPECTED="ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"
